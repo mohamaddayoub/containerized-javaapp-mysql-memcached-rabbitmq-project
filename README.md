@@ -1,10 +1,11 @@
 ![mult-tier Web App](https://github.com/mohamaddayoub/containerized-javaapp-mysql-memcached-rabbitmq-project/assets/49444800/f3221c3b-3e3c-462b-ae9c-ef63232987ca)
 ## Multi-tier Web Application:
-> MySQL (Database SVC).
-> Memcache (DB Caching SVC).
-> RabbitMQ (Broker/Queue SVC).
-> Tomcat (Application SVC).
-> Nginx (Web SVC).
+- MySQL (Database SVC).
+- Memcache (DB Caching SVC).
+- RabbitMQ (Broker/Queue SVC).
+- Tomcat (Application SVC).
+- Nginx (Web SVC).
+
 ###
 ## Prerequisites
 - JDK 1.8 or later
