@@ -1,0 +1,48 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: ./Docker-files/app
+    image: mohamaddayoub/vprofileapp
+    #volumes:
+      #- vproappdata:/usr/local/tomcat/webapps
+    ports:
+      - "8080:8080"
+    container_name: vproapp
+
+  db:
+    build:
+      context: ./Docker-files/db
+    image: mohamaddayoub/vprofiledb
+    container_name: vprodb
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=vprodbpass
+    #volumes:
+      #- vprodbdata:/var/lib/mysql
+
+  web:
+    build:
+      context: ./Docker-files/web
+    image: mohamaddayoub/vprofileweb
+    container_name: vproweb
+    ports:
+      - "80:80"
+
+  vpromq01:
+    image: rabbitmq
+    ports:
+      - "15672:15672"
+    environment:
+      - ABBITMQ_DEFAULT_USER=guest
+      - ABBITMQ_DEFAULT_PASS=guest
+
+  vprocache01:
+    image: memcached
+    ports:
+      - "11211:11211"
+#volumes:
+  #vprodbdata: {}
+ # vproappdata: {}
+    
